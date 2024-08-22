@@ -1,0 +1,21 @@
+pipeline {
+agent any
+stages{
+stage ("Builiding the application...") {
+steps {
+          echo 'Installion of yarn started...'
+          node js('Node'){
+            sh 'yarn install'
+}
+}
+}
+stage ("Running the application.."){
+steps {
+      echo'Execution of gradle started..'
+      withGradle(){
+         sh !/gradlew -v
+}
+}
+}
+}
+}
