@@ -1,19 +1,21 @@
 pipeline {
 agent any
+tools{
+gradle 'Gradle'
+}
 stages{
 stage ("Builiding the application...") {
 steps {
           echo 'Installion of yarn started...'
           node js('Node'){
-            sh 'npm install'
+            sh 'yarn install'
 }
 }
 }
 stage ("Running the application.."){
 steps {
       echo'Execution of gradle started..'
-      withGradle(){
-         sh !/gradlew -v
+              sh './gradlew -v'
 }
 }
 }
