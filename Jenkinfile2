@@ -7,7 +7,7 @@ stages{
 stage ("Builiding the application...") {
 steps {
           echo 'Installion of yarn started...'
-          node js('Node'){
+          node js("Node"){
             sh 'yarn install'
 }
 }
