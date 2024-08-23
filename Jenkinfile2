@@ -4,7 +4,7 @@ tools{
 gradle 'Gradle'
 }
 stages{
-stage ("Builiding the application....") {
+stage ("Builiding the application...") {
 steps {
           echo 'Installion of yarn started...'
           echo 'started'
